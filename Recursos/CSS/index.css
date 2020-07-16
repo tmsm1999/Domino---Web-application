@@ -1,0 +1,601 @@
+body, html {
+	min-height: 100%;
+	min-width: 100%;
+}
+
+body {
+	/*background-image: url("../Imagens/fundo_madeira.jpeg");*/
+	background-color: #bfbfbf;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	padding-bottom: 100px;
+}
+
+h1 {
+	color: white;
+	font-size: 100px;
+	font-family: "Avenir Next";
+	text-align: center;
+	margin-top: 30px;
+	text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+}
+
+/*#imagem_canto {
+	position: relative;
+	width: 400px;
+	height: 225px;
+	background-image: url("../Imagens/canto_esquerdo_domino.png");
+	top: 0;
+	left: 0;
+	border-radius: 40px;
+}*/
+
+#fundo_preto_opaco_botoes {
+	position: fixed;
+	min-height: 100%;
+	min-width: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: black;
+	opacity: 0.9;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#mesa_de_jogo {
+	position: relative;
+	z-index: 0;
+	margin: 0 auto;
+	margin-top: 0;
+	height: 550px;
+	width: 1300px;
+	border-style: solid;
+	background-color: rgb(62, 153, 159);
+	vertical-align: middle;
+	text-align: center;
+	z-index: 0;
+}
+
+#conjunto_botoes {
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	margin-top: 90px; /*centrado ao meio 550-370 verticalmente*/
+	height: 370px;
+	width: 500px;
+	/*vertical-align: middle;*/
+}
+
+#novo_jogo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 400px;
+	height: 400px;
+	background-color: #D3D3D3;
+	border-radius: 40px;
+	text-align: center;
+	border: 5px solid white;
+	visibility: hidden;
+}
+
+#dificuldade {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 400px;
+	height: 260px;
+	background-color: #D3D3D3;
+	border-radius: 40px;
+	text-align: center;
+	border: 5px solid white;
+	visibility: hidden;
+}
+
+#instrucoes {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 550px;
+	height: 500px;
+	background-color: #D3D3D3;
+	border-radius: 40px;
+	border: 5px solid white;
+	font-family: "Avenir Next";
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin: auto;
+	text-align: center;
+	visibility: hidden;
+}
+
+#instrucoes ul {
+	margin: 40px;
+	padding: 0px;
+}
+
+#fechar_instrucoes {
+	height: 40px;
+	width: 200px;
+	font-family: "Avenir Next";
+	font-size: 15px;
+	background-color: #bfbfbf;
+	border-radius: 10px;
+	border: 2px solid black;
+	margin-bottom: 35px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+#login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 400px;
+	height: 380px;
+	background-color: #D3D3D3;
+	border-radius: 40px;
+	text-align: center;
+	border: 5px solid white;
+	visibility: hidden;
+}
+
+#classificacoes {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 400px;
+	height: 260px;
+	background-color: #D3D3D3;
+	border-radius: 40px;
+	/*text-align: center;
+	justify-content: center;*/
+	margin: 0 auto;
+	border: 5px solid white;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	visibility: hidden;
+}
+
+#final_jogo_ganhar {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 300px;
+	height: 230px;
+	background-color: #009900;
+	border-radius: 40px;
+	font-size: 30px;
+	text-align: center;
+	border: 5px solid white;
+	font-family: "Avenir Next";
+	font-size: 25px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+#final_jogo_perder {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 300px;
+	height: 230px;
+	background-color: #ff4d4d;
+	border-radius: 40px;
+	font-size: 30px;
+	text-align: center;
+	border: 5px solid white;
+	font-family: "Avenir Next";
+	font-size: 25px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+#final_jogo_empate {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 300px;
+	height: 230px;
+	background-color: #ffff66;
+	border-radius: 40px;
+	font-size: 30px;
+	text-align: center;
+	border: 5px solid white;
+	font-family: "Avenir Next";
+	font-size: 25px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+#painel_desistir {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	width: 430px;
+	height: 320px;
+	background-color: #ff4d4d;
+	border-radius: 40px;
+	font-size: 30px;
+	text-align: center;
+	border: 5px solid white;
+	font-family: "Avenir Next";
+	font-size: 25px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+.sim_nao_desistir {
+	height: 16%;
+	width: 50%;
+	font-family: "Avenir Next";
+	font-size: 15px;
+	background-color: #bfbfbf;
+	border-radius: 10px;
+	border: 2px solid black;
+	margin-top: 3%;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.sim_nao_desistir:hover {
+	background-color: #666666;
+	color: white;
+}
+
+.titulo_caixa {
+	font-family: "Avenir Next";
+	font-size: 30px;
+}
+
+.botao_menu_principal {
+	background-color: white;
+	height: 70px;
+	width: 500px;
+	border-radius: 10px;
+	border: 2px solid black;
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+	font-family: "Avenir Next";
+}
+
+.novo_jogo:hover {
+	background-color: #D3D3D3;
+	color: white;
+}
+
+.novo_jogo {
+	position: relative;
+	z-index: 0;
+}
+
+.instrucoes:hover {
+	background-color: #D3D3D3;
+	color: white;
+}
+
+.instrucoes {
+	position: relative;
+	margin-top: 30px;
+	z-index: 0;
+}
+
+.dificuldade:hover {
+	background-color: #D3D3D3;
+	color: white;
+}
+
+.dificuldade {
+	position: relative;
+	margin-top: 30px;
+	z-index: 0;
+}
+
+.classificacoes:hover {
+	background-color: #D3D3D3;
+	color: white;
+}
+
+.classificacoes {
+	position: relative;
+	margin-top: 30px;
+	z-index: 0;
+}
+
+.botao_jogar {
+	height: 15%;
+	width: 50%;
+	font-family: "Avenir Next";
+	font-size: 15px;
+	background-color: #bfbfbf;
+	border-radius: 10px;
+	border: 2px solid black;
+	margin-top: 8%;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.texto_antes {
+	margin-top: 15px;
+	font-family: "Avenir Next";
+	font-size: 20px;
+}
+
+input[type=text] {
+	margin-top: 0;
+	width: 60%;
+	padding: 5px;
+	border: 2px solid black;
+	border-radius: 3px;
+}
+
+input[type=text] {
+	margin-top: 0;
+}
+
+input[type=password] {
+	margin-top: 0;
+	width: 60%;
+	padding: 5px;
+	border: 2px solid black;
+	border-radius: 3px;
+}
+
+input[type=password] {
+	margin-top: 0;
+}
+
+label {
+	margin-top: 0;
+	font-family: "Avenir Next";
+	font-size: 15px;
+}
+
+.botao_retorno_fecho {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background-image: url("../Imagens/x_fechar.png");
+	background-color: transparent;
+	height: 15px;
+	padding-left: 15px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	border: none;
+    cursor: pointer;
+}
+
+.botoes_radio {
+	text-align: left;
+	margin-left: 170px;
+}
+
+.display_pecas {
+	position: absolute;
+	z-index: 2;
+	margin-bottom: 10px;
+	width: 70%;
+	height: 120px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: white;
+	visibility: hidden;
+
+}
+
+#top {
+	top: 18%;
+	left: 50%;
+	transform: translate(-67%,-50%);
+	background-color: white;
+	margin: 0 auto;
+	width: 70%;
+	overflow-x: auto;
+  	overflow-y: auto;
+  	white-space: nowrap;
+  	vertical-align: middle;
+  	font-size: 90px;
+    /* line-height: -10px; */
+	text-align: center;
+    align-content: center;
+    text-align: center;
+}
+
+#bottom {
+	position: absolute;
+	margin: 2px auto;
+	top: 82%;
+	left: 50%;
+	transform: translate(-67%,-50%);
+	overflow-x: hidden;
+	overflow-y: scroll;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+#jogo {
+	top: 50%;
+	left: 50%;
+	transform: translate(-67%,-50%);
+	background-color: white;
+	margin: 0 auto;
+	width: 70%;
+	overflow-x: auto;
+  	overflow-y: auto;
+  	white-space: nowrap;
+  	vertical-align: middle;
+  	font-size: 90px;
+	text-align: center;
+    /* line-height: -10px; */
+    align-content: center;
+    text-align: center;
+  	/*vertical-align: middle;*/
+  	/*line-height: -1px;*/
+}
+
+/*https://coursesweb.net/css/making-div-contents-scroll-horizontally_cs*/
+.peca {
+	margin-top: 15px;
+	float: left;
+	margin-left: 20px;
+	font-size: 70px;
+	border: 1px;
+	border-radius: 10px;
+	align-content: center;
+	white-space: nowrap;
+}
+
+.botao_jogar_peca {
+	width: 160px;
+	height: 40px;
+	float: right;
+	margin-right: 7%;
+	border-radius: 7px;
+	border: 2px solid black;
+	font-family: "Avenir Next";
+	font-size: 13px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#jogar_esquerda {
+	margin-top: -55px;
+	visibility: hidden;
+}
+
+#jogar_direita {
+	margin-top: -23px;
+	visibility: hidden;
+}
+
+#monte_pecas {
+	width: 160px;
+	height: 160px;
+	float: right;
+	margin-right : -12.3%;
+	border-radius: 7px;
+	border: 2px solid black;
+	font-family: "Avenir Next";
+	text-align: center;
+	margin-top: -280px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: red;
+	font-weight: bold;
+
+	visibility: hidden;
+}
+
+.botao_jogar_peca:hover {
+	background-color: #666666;
+	color: white;
+}
+
+#caixa_mensagens {
+	width: 260px;
+	height: 100px;
+	float: right;
+	margin-right : -16.3%;
+	border-radius: 7px;
+	border: 2px solid black;
+	font-family: "Avenir Next";
+	text-align: center;
+	margin-top: -430px;
+	font-size: 20px;
+	background-color: #F7DC70;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+#displayNPecas {
+	font-size: 15px;
+}
+
+#onde_jogar {
+	font-size: 15px;
+	margin-bottom: 20px;
+	color: red;
+}
+
+#passar_jogada {
+	margin-top: 20px;
+	margin-right: 11%;
+	background-color: #F7DC70;
+	visibility: hidden;
+}
+
+#desistir_jogo {
+	margin-top: 20px;
+	margin-right: 8%;
+	background-color: #ff4d4d;
+	visibility: hidden;
+}
+
+#classificacoes_jogo {
+	margin-top: 20px;
+	margin-right: 15%;
+	background-color: white;
+	visibility: hidden;
+}
+
+#classificacoes_jogo {
+	margin-top: 20px;
+	margin-right: 17%;
+	background-color: #8c8c8c;
+	visibility: hidden;
+}
+
+#instrucoes_jogo {
+	margin-top: 20px;
+	margin-right: 8%;
+	background-color: #8c8c8c;
+	visibility: hidden;
+}
+
+#tabela_classificacoes {
+	width: 100%;
+	height: 100%;
+	background-color: #D3D3D3;
+}
+
+#botao_login {
+	background-color: white;
+	height: 40px;
+	width: 200px;
+	border-radius: 4px;
+	border: 2px solid black;
+	cursor: pointer;
+	text-align: center;
+	font-size: 15px;
+	font-family: "Avenir Next";
+	float: right;
+	margin-top: -155px;
+	margin-right: 4.6%;
+}
+
+
+#botao_login:hover {
+	background-color: #D3D3D3;
+	color: white;
+}

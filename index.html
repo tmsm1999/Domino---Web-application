@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8>
+	<title>Bem-vindo ao Dominó</title>
+	<link rel="stylesheet" type="text/css" href="./Recursos/CSS/index.css">
+	<!--<script type="text/javascript" charset="utf-8" src="./Recursos/JavaScript/programa.js"></script>-->
+</head>
+<body>
+	<div id="fundo_preto_opaco_botoes"></div>
+	<!-- <div id="imagem_canto"></div> -->
+	<h1>O Dominó</h1>
+
+	<button id="botao_login">Iniciar sessão</button>
+
+	<div id="mesa_de_jogo">
+		<div id="conjunto_botoes">
+			<button class="botao_menu_principal novo_jogo" id="botao_caixa_novo_jogo"><b>👨‍💻 Novo Jogo</b></button>
+			<br>
+			<button class="botao_menu_principal instrucoes" id="botao_caixa_instrucoes"><b>📜 Instruções</b></button>
+			<br>
+			<button class="botao_menu_principal dificuldade" id="botao_caixa_dificuldade"><b>😬 Dificuldade</b></button>
+			<br>
+			<button class="botao_menu_principal classificacoes" id=botao_caixa_classificacoes><b>🏅 Classificações</b></button>
+		</div>
+		<div id=top class="display_pecas">
+		</div>
+		<div id=bottom class="display_pecas">
+		</div>
+		<div id=jogo class="display_pecas">
+		</div>
+		<button id = "jogar_esquerda" class="botao_jogar_peca">👈 Jogar Esquerda</button>
+		<br>
+		<button id = "jogar_direita" class="botao_jogar_peca">👉 Jogar Direita</button>
+		<button id = "monte_pecas">Retirar nova peça
+			<br>
+			<span id= "displayNPecas">
+				Nº de Peças no monte: 14
+			</span>
+		</button>
+		<div id = "caixa_mensagens">
+			<p id = "mensagem">This is a text!</p>
+			<p id = "onde_jogar"></p>
+		</div>
+		<!-- "desaparecerCaixa('novo_jogo', 'fundo_preto_opaco_botoes')" -->
+	</div>
+	<div id="novo_jogo">
+		<button class="botao_retorno_fecho" id="botao_fecho_novo_jogo"></button>
+		<p class="titulo_caixa"><b>Começar um novo jogo</b></p>
+		<form>
+			<p class="texto_antes">Nome do jogador</p>
+			<input id="nome_jogador" type="text" name="name">
+			<br>
+			<br>
+			<p class="texto_antes">Adversário</p>
+			<input type="radio" id="computador" name="adversario" value="adversario_computador" checked="checked">
+			<label for="computador">Computador</label>
+			<br>
+			<input type="radio" id="humano" name="adversario" value="adversario_humano">
+			<label for="humano">Humano</label>
+			<br>
+			<button class="botao_jogar" type="button" id="comecar_jogo">Começar novo jogo</button>
+		</form>
+	</div>
+
+	<div id="instrucoes">
+		<button class="botao_retorno_fecho" id="botao_fecho_instrucoes"></button>
+		<p class="titulo_caixa"><b>Instruções</b></p>
+		<h4>Peças do Dominó</h4>
+		<ul>
+			<li>Cada peça do jogo Dominó é retângular e tem duas partes quadradas.</li>
+			<li>Cada quadrado tem um valor entre 0 e 6 representado por pontos.</li>
+			<li>Existem todas as combinações de valores de 2 valores de 0 a 6.</li>
+			<li>Não existem peças repetidas.</li>
+			<li>Cada peça tem 4 posições possíveis.</li>
+			<li>No total existe 28 peças.</li>
+			<!-- <br> -->
+		</ul>
+
+		<h4>Início da partida</h4>
+		<ul>
+			<li>No início do jogo as peças são baralhadas e distribuídas por 3 grupos: mão do jogador (7 peças), mão do oponete (7 peças) e o monte(14 peças).</li>
+			<li>Quem tem a peça com o valor mais elevado inicia o jogo e coloca-a no centro do tabuleiro.</li>
+			<!-- <br> -->
+		</ul>
+
+		<h4>Jogar as peças</h4>
+		<ul>
+			<li>Durante a partida os jogadores jogam alternadamente.</li>
+			<li>As peças jogadas formam uma única fila.</li>
+			<li>Cada nova peça é colocada numa das extremidades da fila.</li>
+			<li>O valor de duas peças justapostas tem que ser o mesmo.</li>
+			<!-- <br> -->
+		</ul>
+
+		<h4>Monte</h4>
+		<ul>
+			<li>Se um jogador não tiver peça para jogar tem que ir ao monte.</li>
+			<li>O jogador vai tirando peças do monte até que possa jogar.</li>
+			<li>Não havendo peças no monte o jogador pode passar a vez.</li>
+			<li>Só com o monte vazio é que se pode passar a vez.</li>
+			<!-- <br> -->
+		</ul>
+
+		<h4>Terminar</h4>
+		<ul>
+			<li>A partida termina quando um dos jogadores fica sem peças.</li>
+			<li>A partida jogador a ficar sem peças é o vencedor.</li>
+			<li>A partida termina e fica fechada quando nenhum jogador pode jogar.</li>
+			<li>O jogo está fechado se aparecer o mesmo valor em ambas as extremidades ou aparecer 7 vezes nas peças.</li>
+			<li>Por isso, ganha o jogador com o menor númro de pontos em mão. Esses pontos são a soma dos pares de valores das suas peças.</li>
+		</ul>
+		<button type="button" id="fechar_instrucoes">Ok!</button>
+	</div>
+
+	<div id="dificuldade">
+		<button class="botao_retorno_fecho" id="botao_fecho_dificuldade"></button>
+		<p class="titulo_caixa"><b>Dificuldade</b></p>
+		<div>
+			<form id = "form_dificuldade">
+				<input type="radio" id="facil" name="dificuldade" value="facil" checked="checked">
+				<label for="facil">Fácil</label>
+				<br>
+				<input type="radio" id="medio" name="dificuldade" value="medio">
+				<label for="medio">Médio</label>
+				<br>
+				<input type="radio" id="dificil" name="dificuldade" value="dificil">
+				<label for="dificil">Difícil</label>
+				<br>
+				<button class="botao_jogar" id="guardar_alteracoes" type="button">Guardar alterações</button>
+			</form>
+		</div>
+	</div>
+
+	<div id="classificacoes">
+		<button class="botao_retorno_fecho" id="botao_fecho_classificacoes"></button>
+		<p class="titulo_caixa"><b>Classificações</b></p>
+
+		<div id="tabela_classificacoes">
+		</div>
+	</div>
+
+	<div id="login">
+		<button class="botao_retorno_fecho" id="botao_fecho_login"></button>
+		<p class="titulo_caixa"><b>Iniciar sessão</b></p>
+		<form>
+			<p class="texto_antes">Nome de utilizador</p>
+			<input id="username" type="text" placeholder="Insira nome de utilizador" name="uname" required>
+			<br>
+			<br>
+			<p class="texto_antes">Palavra-passe</p>
+			<input id="password" type="password" placeholder="Insira Palavra-passe" name="palavra_passe" required>
+			<br>
+			<button class="botao_jogar" id="entrar_login" type="button">Entrar</button>
+		</form>
+	</div>
+
+	<div id="painel_desistir">
+		<p class="titulo_caixa"><b>Deseja mesmo desistir? 🤔</b></p>
+		<p class="titulo_caixa"><b>Se desistir perderá o jogo.</b></p>
+		<button class="sim_nao_desistir" id="desistir_jogo_sim" type="button">Sim</button>
+		<button class="sim_nao_desistir" id="desistir_jogo_nao" type="button">Não</button>
+	</div>
+
+	<div id = "final_jogo_ganhar">
+		<p>Parabéns! 👏</p>
+		<p>Ganhou a partida...</p>
+		<button class="botao_jogar" id ="fechar_ganhar">Página principal</button>
+	</div>
+	<div id = "final_jogo_perder">
+		<p>Continue a tentar! 😞</p>
+		<p>Perdeu a partida...</p>
+		<button class="botao_jogar" id ="fechar_perder">Página principal</button>
+	</div>
+	<div id = "final_jogo_empate">
+		<p>Jogo fechado! 🙈 </p>
+		<p>Ninguém pode jogar...</p>
+		<button class="botao_jogar" id= "fechar_empatar">Página principal</button>
+	</div>
+
+	<button class="botao_jogar_peca" id="passar_jogada">‼️ Passar a jogada</button>
+	<button class="botao_jogar_peca" id="desistir_jogo">😞 Desistir da partida</button>
+	<button class="botao_jogar_peca" id="classificacoes_jogo">🏅 Classificações</button>
+	<button class="botao_jogar_peca" id="instrucoes_jogo">📜 Instruções</button>
+
+	<script src="./Recursos/JavaScript/programa.js"></script>
+	<script src="./Recursos/JavaScript/communication.js"></script>
+
+</body>
+</html>
